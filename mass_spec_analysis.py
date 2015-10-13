@@ -11,6 +11,9 @@ proteinGroupsDataFrame = pandas.DataFrame.from_csv('proteinGroups.txt', sep='\t'
 PhosphoSTYsitesDataFrame = pandas.DataFrame.from_csv('Phospho(STY)Sites.txt', sep='\t')
 peptideDataFrame = pandas.DataFrame.from_csv('peptides.txt', sep='\t')
 
+def updateDF(DataFrame, stringKey, stringValue):
+    DataFrame = DataFrame[DataFrame[stringKey] != stringValue]
+    
 
 def makeScatterPlot(proteinGroupsDataFrame):
     #makes scatter plot of Control vs TPK1 ko... 
